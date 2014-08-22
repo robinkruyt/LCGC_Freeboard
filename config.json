@@ -3,10 +3,32 @@
     "plugins": [],
     "panes": [
         {
-            "title": "Kenteq",
+            "title": "BigBrother",
             "width": 1,
             "row": {
                 "3": 1
+            },
+            "col": {
+                "3": 1
+            },
+            "widgets": [
+                {
+                    "type": "text_widget",
+                    "settings": {
+                        "title": "Little Chickens On Site",
+                        "size": "regular",
+                        "value": "datasources[\"BigBrother\"].UsersOnline",
+                        "sparkline": true,
+                        "animate": true
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Kenteq",
+            "width": 1,
+            "row": {
+                "3": 5
             },
             "col": {
                 "3": 1
@@ -177,7 +199,7 @@
             "type": "JSON",
             "settings": {
                 "url": "http://10.0.0.12:12345/repository_info.php?repo=kenteq2014",
-                "refresh": 10
+                "refresh": 60
             }
         },
         {
@@ -185,7 +207,7 @@
             "type": "JSON",
             "settings": {
                 "url": "http://10.0.0.12:12345/repository_info.php?repo=klmJets",
-                "refresh": 10
+                "refresh": 60
             }
         },
         {
@@ -193,7 +215,15 @@
             "type": "JSON",
             "settings": {
                 "url": "http://10.0.0.12:12345/repository_info.php?repo=AviationEmpireU4_3",
-                "refresh": 10
+                "refresh": 60
+            }
+        },
+        {
+            "name": "BigBrother",
+            "type": "JSON",
+            "settings": {
+                "url": "http://10.0.0.12:12345/bigbrother/data.json",
+                "refresh": 60
             }
         }
     ]
