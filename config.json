@@ -1,0 +1,230 @@
+{
+    "allow_edit": true,
+    "plugins": [],
+    "panes": [
+        {
+            "title": "BigBrother",
+            "width": 1,
+            "row": {
+                "3": 1
+            },
+            "col": {
+                "3": 1
+            },
+            "widgets": [
+                {
+                    "type": "text_widget",
+                    "settings": {
+                        "title": "Little Chickens On Site",
+                        "size": "regular",
+                        "value": "datasources[\"BigBrother\"].UsersOnline",
+                        "sparkline": true,
+                        "animate": true
+                    }
+                }
+            ]
+        },
+        {
+            "title": "Kenteq",
+            "width": 1,
+            "row": {
+                "3": 5
+            },
+            "col": {
+                "3": 1
+            },
+            "widgets": [
+                {
+                    "type": "gauge",
+                    "settings": {
+                        "title": "Velocity",
+                        "value": "Math.round(datasources[\"KenteqSVN\"].velocities.global * 100)/ 100",
+                        "min_value": 0,
+                        "max_value": 15
+                    }
+                },
+                {
+                    "type": "text_widget",
+                    "settings": {
+                        "title": "Current Revision",
+                        "size": "regular",
+                        "value": "datasources[\"KenteqSVN\"].last_changed_rev",
+                        "sparkline": true,
+                        "animate": true
+                    }
+                },
+                {
+                    "type": "text_widget",
+                    "settings": {
+                        "title": "Author",
+                        "size": "regular",
+                        "value": "datasources[\"KenteqSVN\"].last_changed_author",
+                        "animate": true
+                    }
+                },
+                {
+                    "type": "text_widget",
+                    "settings": {
+                        "title": "Date",
+                        "size": "regular",
+                        "value": "datasources[\"KenteqSVN\"].last_changed_date",
+                        "animate": true
+                    }
+                },
+                {
+                    "type": "html",
+                    "settings": {
+                        "html": "return \"<h2 style=\\\"margin: 10px; font-size:1.2em; font-weight: bold;\\\">Message</h2><p style=\\\"margin: 10px;\\\">\"+datasources[\"KenteqSVN\"].details[0].message+\"</p>\"",
+                        "height": 4
+                    }
+                }
+            ]
+        },
+        {
+            "title": "KLM Jets",
+            "width": 1,
+            "row": {
+                "3": 1
+            },
+            "col": {
+                "3": 2
+            },
+            "widgets": [
+                {
+                    "type": "gauge",
+                    "settings": {
+                        "title": "Velocity",
+                        "value": "Math.round(datasources[\"KLMJetsSVn\"].velocities.global * 100)/ 100",
+                        "min_value": 0,
+                        "max_value": 15
+                    }
+                },
+                {
+                    "type": "text_widget",
+                    "settings": {
+                        "title": "Current Revision",
+                        "size": "regular",
+                        "value": "datasources[\"KLMJetsSVn\"].last_changed_rev",
+                        "sparkline": true,
+                        "animate": true
+                    }
+                },
+                {
+                    "type": "text_widget",
+                    "settings": {
+                        "title": "Author",
+                        "size": "regular",
+                        "value": "datasources[\"KLMJetsSVn\"].last_changed_author",
+                        "animate": true
+                    }
+                },
+                {
+                    "type": "text_widget",
+                    "settings": {
+                        "title": "Date",
+                        "size": "regular",
+                        "value": "datasources[\"KLMJetsSVn\"].last_changed_date",
+                        "animate": true
+                    }
+                },
+                {
+                    "type": "html",
+                    "settings": {
+                        "html": "return \"<h2 style=\\\"margin: 10px; font-size:1.2em; font-weight: bold;\\\">Message</h2><p style=\\\"margin: 10px;\\\">\"+datasources[\"KLMJetsSVn\"].details[0].message+\"</p>\"",
+                        "height": 4
+                    }
+                }
+            ]
+        },
+        {
+            "title": "KLM",
+            "width": 1,
+            "row": {
+                "3": 1
+            },
+            "col": {
+                "3": 3
+            },
+            "widgets": [
+                {
+                    "type": "gauge",
+                    "settings": {
+                        "title": "Velocity",
+                        "value": "Math.round(datasources[\"KLMSVN\"].velocities.global * 100)/ 100",
+                        "min_value": 0,
+                        "max_value": 15
+                    }
+                },
+                {
+                    "type": "text_widget",
+                    "settings": {
+                        "title": "Current Revision",
+                        "size": "regular",
+                        "value": "datasources[\"KLMSVN\"].last_changed_rev",
+                        "sparkline": true,
+                        "animate": true
+                    }
+                },
+                {
+                    "type": "text_widget",
+                    "settings": {
+                        "title": "Author",
+                        "size": "regular",
+                        "value": "datasources[\"KLMSVN\"].last_changed_author",
+                        "animate": true
+                    }
+                },
+                {
+                    "type": "text_widget",
+                    "settings": {
+                        "title": "Date",
+                        "size": "regular",
+                        "value": "datasources[\"KLMSVN\"].last_changed_date",
+                        "animate": true
+                    }
+                },
+                {
+                    "type": "html",
+                    "settings": {
+                        "html": "return \"<h2 style=\\\"margin: 10px; font-size:1.2em; font-weight: bold;\\\">Message</h2><p style=\\\"margin: 10px;\\\">\"+datasources[\"KLMSVN\"].details[0].message+\"</p>\"",
+                        "height": 4
+                    }
+                }
+            ]
+        }
+    ],
+    "datasources": [
+        {
+            "name": "KenteqSVN",
+            "type": "JSON",
+            "settings": {
+                "url": "http://10.0.0.12:12345/repository_info.php?repo=kenteq2014",
+                "refresh": 60
+            }
+        },
+        {
+            "name": "KLMJetsSVn",
+            "type": "JSON",
+            "settings": {
+                "url": "http://10.0.0.12:12345/repository_info.php?repo=klmJets",
+                "refresh": 60
+            }
+        },
+        {
+            "name": "KLMSVN",
+            "type": "JSON",
+            "settings": {
+                "url": "http://10.0.0.12:12345/repository_info.php?repo=AviationEmpireU4_3",
+                "refresh": 60
+            }
+        },
+        {
+            "name": "BigBrother",
+            "type": "JSON",
+            "settings": {
+                "url": "http://10.0.0.12:12345/bigbrother/data.json",
+                "refresh": 60
+            }
+        }
+    ]
+}
