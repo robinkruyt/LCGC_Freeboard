@@ -176,7 +176,7 @@
             "name": "KenteqSVN",
             "type": "JSON",
             "settings": {
-                "url": "http://localhost:12345/repository_info.php?repo=kenteq2014",
+                "url": "http://10.0.0.12:12345/repository_info.php?repo=kenteq2014",
                 "refresh": 10
             }
         },
@@ -184,7 +184,7 @@
             "name": "KLMJetsSVn",
             "type": "JSON",
             "settings": {
-                "url": "http://localhost:12345/repository_info.php?repo=klmJets",
+                "url": "http://10.0.0.12:12345/repository_info.php?repo=klmJets",
                 "refresh": 10
             }
         },
@@ -192,7 +192,7 @@
             "name": "KLMSVN",
             "type": "JSON",
             "settings": {
-                "url": "http://localhost:12345/repository_info.php?repo=AviationEmpireU4_3",
+                "url": "http://10.0.0.12:12345/repository_info.php?repo=AviationEmpireU4_3",
                 "refresh": 10
             }
         }
