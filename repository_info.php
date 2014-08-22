@@ -73,7 +73,7 @@ function getVelocity($repo){
   // Last commit
   $lines = _cleanLines(explode("\n", end($commits)));
   $properties = _getMeta($lines[0]);
-  $endTime = DateTime::createFromFormat("Y-m-d H:i:s O", substr($properties["date"], 0, 25));
+  $endTime = new DateTime();
 
   $amount = count($commits);
   $diff = $endTime->diff($startTime);
