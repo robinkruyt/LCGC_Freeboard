@@ -27,7 +27,13 @@
                 function(){
                     $(function()
                     { //DOM Ready
-                        freeboard.initialize(true);
+                        freeboard.initialize(true, function(){
+                            $.getJSON("config.json", function(data){
+                                freeboard.loadDashboard(data);
+                                freeboard.setEditing(false, false)
+                            });
+                            
+                        });
                     });
                 });
     </script>
