@@ -70,6 +70,11 @@ function getVelocity($repo){
   $properties = _getMeta($lines[0]);
   $startTime = DateTime::createFromFormat("Y-m-d H:i:s O", substr($properties["date"], 0, 25));
 
+  if(!$startTime){
+    $fields["velocities"] = array("global" => -1, "hours"=> -1, "amount" => -1, "startTime"=>-1, "endTime"=>-1);
+    return;
+  }
+
   // Last commit
   $lines = _cleanLines(explode("\n", end($commits)));
   $properties = _getMeta($lines[0]);
