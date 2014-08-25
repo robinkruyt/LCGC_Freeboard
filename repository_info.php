@@ -81,6 +81,9 @@ function getVelocity($repo){
   //$hours = $hours + ($diff->days*24);
   $minutes = abs(($endTime->getTimestamp() - $startTime->getTimestamp())) / 60;
   $hours = $minutes * (1/60);
+  if($hours < 1){
+    $hours = 1;
+  }
   $fields["velocities"] = array("global" => $amount / $hours, "hours"=> $hours, "amount" => $amount, "startTime"=>$startTime, "endTime"=>$endTime);
   /*foreach ($commits as $key => $commit) {
     
