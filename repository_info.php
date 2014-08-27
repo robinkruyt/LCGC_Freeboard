@@ -71,7 +71,7 @@ function getVelocity($repo){
   $startTime = DateTime::createFromFormat("Y-m-d H:i:s O", substr($properties["date"], 0, 25));
 
   if(!$startTime){
-    $fields["velocities"] = array("global" => -1, "hours"=> -1, "amount" => -1, "startTime"=>-1, "endTime"=>-1);
+    $fields["velocities"] = array("global" => 0, "hours"=> 0, "amount" => 0, "startTime"=>0, "endTime"=>0);
     return;
   }
 
