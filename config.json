@@ -3,27 +3,10 @@
     "plugins": [],
     "panes": [
         {
-            "width": 1,
-            "row": {
-                "3": 1
-            },
-            "col": {
-                "3": 1
-            },
-            "widgets": [
-                {
-                    "type": "picture",
-                    "settings": {
-                        "src": "http://ljdchost.com/iA7lN5dKtGuuj.gif"
-                    }
-                }
-            ]
-        },
-        {
             "title": "BigBrother",
             "width": 1,
             "row": {
-                "3": 11
+                "3": 1
             },
             "col": {
                 "3": 1
@@ -45,7 +28,7 @@
             "title": "Kenteq",
             "width": 1,
             "row": {
-                "3": 15
+                "3": 4
             },
             "col": {
                 "3": 1
@@ -208,6 +191,63 @@
                     }
                 }
             ]
+        },
+        ,
+        {
+            "title": "QLVR",
+            "width": 1,
+            "row": {
+                "3": 2
+            },
+            "col": {
+                "3": 3
+            },
+            "widgets": [
+                {
+                    "type": "gauge",
+                    "settings": {
+                        "title": "Velocity",
+                        "value": "Math.round(datasources[\"QLVRSVN\"].velocities.global * 100)/ 100",
+                        "min_value": 0,
+                        "max_value": 15
+                    }
+                },
+                {
+                    "type": "text_widget",
+                    "settings": {
+                        "title": "Current Revision",
+                        "size": "regular",
+                        "value": "datasources[\"QLVRSVN\"].last_changed_rev",
+                        "sparkline": true,
+                        "animate": true
+                    }
+                },
+                {
+                    "type": "text_widget",
+                    "settings": {
+                        "title": "Author",
+                        "size": "regular",
+                        "value": "datasources[\"QLVRSVN\"].last_changed_author",
+                        "animate": true
+                    }
+                },
+                {
+                    "type": "text_widget",
+                    "settings": {
+                        "title": "Date",
+                        "size": "regular",
+                        "value": "datasources[\"QLVRSVN\"].last_changed_date",
+                        "animate": true
+                    }
+                },
+                {
+                    "type": "html",
+                    "settings": {
+                        "html": "return \"<h2 style=\\\"margin: 10px; font-size:1.2em; font-weight: bold;\\\">Message</h2><p style=\\\"margin: 10px;\\\">\"+datasources[\"QLVRSVN\"].details[0].message+\"</p>\"",
+                        "height": 4
+                    }
+                }
+            ]
         }
     ],
     "datasources": [
@@ -240,6 +280,14 @@
             "type": "JSON",
             "settings": {
                 "url": "http://10.0.0.12:12345/bigbrother/data.json",
+                "refresh": 60
+            }
+        },
+        {
+            "name": "QLVRSVN",
+            "type": "JSON",
+            "settings": {
+                "url": "http://10.0.0.12:12345/repository_info.php?repo=qlvr",
                 "refresh": 60
             }
         }
